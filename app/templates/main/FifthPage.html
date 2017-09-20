@@ -1,0 +1,39 @@
+{% extends 'layouts/base.html' %}
+
+{% set endpoints = [
+    'main.fourthPage'
+] %}
+
+{% block content %}
+    <div class="ui center aligned container">
+        <div class="ui center aligned grid">
+            <div class="ui row"></div>
+            <div class="ui row"></div>
+            <div class="ui row"></div>
+            <div class="ui row"></div>
+            <div class="ui row">
+                <div class="ui five wide column">
+                <div style="font-size:20px" class="ui raised six wide segment"><p>Reactions</p></div>
+                </div>
+                <div class="ui five wide column">
+                    <div style="font-size:20px" class="ui raised six wide segment"><p>Mechanisms</p></div>
+                </div>
+            </div>
+            <div class="ui row"></div>
+            <div class="ui row"></div>
+            <div class="ui row"></div>
+            <div class="ui row">
+                <div class="ui six wide column">
+                    <a href="{{ url_for(endpoints[0]) }}">
+                    <button style="background-color:white;font-size:30px" class="ui button"><i class="chevron left icon"></i> Previous Page</button>
+                </a>
+                </div>
+                <!-- <div class="ui six wide column">
+
+                    <button style="background-color:white;font-size:30px" class="ui button">Next Page<i class="chevron right icon"></i></button>
+                </a>
+                </div> -->
+            </div>
+      </div>
+    </div>
+{% endblock %}

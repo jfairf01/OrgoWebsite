@@ -9,8 +9,20 @@ def index():
     return render_template('main/index.html')
 
 @main.route('/SecondPage')
-def SecondPage():
+def secondPage():
     return render_template('main/SecondPage.html')
+
+@main.route('/ThirdPage')
+def thirdPage():
+    return render_template('main/ThirdPage.html')
+
+@main.route('/FourthPage')
+def fourthPage():
+    return render_template('main/FourthPage.html')
+
+@main.route('/FifthPage')
+def fifthPage():
+    return render_template('main/FifthPage.html')
 
 @main.route('/about')
 def about():

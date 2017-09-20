@@ -1,0 +1,57 @@
+{% extends 'layouts/base.html' %}
+
+{% set endpoints = [
+    'main.secondPage',
+    'main.fourthPage'
+] %}
+
+{% block content %}
+    <div class="ui center aligned container">
+        <div class="ui center aligned grid">
+            <div class="ui row"></div>
+            <div class="ui row"></div>
+            <div class="ui row"></div>
+            <div class="ui row"></div>
+            <div class="ui row">
+                <div class="ui five wide column">
+                <div style="font-size:20px" class="ui raised six wide segment"><p>Sn<sub>1</sub></p></div>
+                </div>
+                <div class="ui five wide column">
+                    <div style="font-size:20px" class="ui raised six wide segment"><p>E1</p></div>
+                </div>
+            </div>
+            <div class="ui row">
+                <div class="ui five wide column">
+                <div style="font-size:20px" class="ui raised six wide clearing segment"><p>Sn<sub>2</sub></p></div>
+                </div>
+                <div class="ui five wide column">
+                    <div style="font-size:20px" class="ui raised six wide clearing segment"><p>E2</p></div>
+                </div>
+            </div>
+            <div class="ui row">
+                <div class="ui five wide column">
+                <div style="font-size:20px" class="ui raised six wide segment"><p>Overview + Summary Chart</p></div>
+                </div>
+            </div>
+            <div class="ui row">
+                <div class="ui five wide column">
+                <div style="font-size:20px" class="ui raised six wide segment"><p>Problems</p></div>
+                </div>
+            </div>
+            <div class="ui row"></div>
+            <div class="ui row"></div>
+            <div class="ui row"></div>
+            <div class="ui row">
+                <div class="ui six wide column">
+                    <a href="{{ url_for(endpoints[0]) }}">
+                    <button style="background-color:white;font-size:30px" class="ui button"><i class="chevron left icon"></i> Previous Page</button>
+                </a>
+                </div>
+                <div class="ui six wide column">
+                    <a href="{{ url_for(endpoints[1]) }}">
+                    <button style="background-color:white;font-size:30px" class="ui button">Next Page<i class="chevron right icon"></i></button>
+                </a>
+                </div>
+      </div>
+    </div>
+{% endblock %}

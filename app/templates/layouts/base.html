@@ -3,6 +3,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+    <link rel="icon" href="{{ url_for('static', filename='atom.ico') }}">
         {% include 'partials/_head.html' %}
         {# Any templates that extend this template can set custom_head_tags to add scripts to their page #}
         {% block custom_head_tags %}{% endblock %}
@@ -44,5 +45,10 @@
               <input type="hidden" name="csrf_token" value="{{ csrf_token()|safe }}">
             </div>
         {% endif %}
+          <style>
+  body {
+    background-color:#009CEB;
+  }
+  </style>
     </body>
 </html>

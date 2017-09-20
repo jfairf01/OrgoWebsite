@@ -1,7 +1,8 @@
 {% extends 'layouts/base.html' %}
 
 {% set endpoints = [
-    'main.secondPage'
+    'main.thirdPage',
+    'main.fifthPage'
 ] %}
 
 {% block content %}
@@ -13,18 +14,18 @@
             <div class="ui row"></div>
             <div class="ui row"></div>
             <div class="ui row">
-                <div class="ui ten wide column">
-                    <div style="font-size:30px" class="ui raised six wide segment"><div class="ui huge text">Undergraduate Basic Organic Chemistry</div></div>
+                <div class="ui six wide column">
+                    <div style="font-size:30px" class="ui raised six wide segment"><div class="ui huge text">Easy</div></div>
                 </div>
             </div>
             <div class="ui row">
-                <div class="ui ten wide column">
-                    <div style="font-size:30px" class="ui raised center segment">Undergraduate Advanced Organic Chemistry</div>
+                <div class="ui six wide column">
+                    <div style="font-size:30px" class="ui raised center segment">Medium</div>
                 </div>
             </div>
             <div class="ui row">
-                <div class="ui ten wide column">
-                    <div style="font-size:30px" class="ui raised center segment">Extra Problems</div>
+                <div class="ui six wide column">
+                    <div style="font-size:30px" class="ui raised center segment">Hard</div>
                 </div>
             </div>
             <div class="ui row"></div>
@@ -33,9 +34,16 @@
             <div class="ui row"></div>
             <div class="ui row"></div>
             <div class="ui row">
-                <a href="{{ url_for(endpoints[0]) }}">
+                <div class="ui six wide column">
+                    <a href="{{ url_for(endpoints[0]) }}">
+                    <button style="background-color:white;font-size:30px" class="ui button"><i class="chevron left icon"></i> Previous Page</button>
+                </a>
+                </div>
+                <div class="ui six wide column">
+                    <a href="{{ url_for(endpoints[1]) }}"> 
                     <button style="background-color:white;font-size:30px" class="ui button">Next Page<i class="chevron right icon"></i></button>
                 </a>
+                </div>
             </div>  
       </div>
     </div>

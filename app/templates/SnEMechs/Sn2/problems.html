@@ -1,0 +1,47 @@
+{% extends 'layouts/base.html' %}
+
+{% set endpoints = [
+    'main.index',
+    'main.Categories',
+    'SnEMechs.index',
+    'SnEMechs.Sn2',
+    'SnEMechs.Sn2Learning',
+    'SnEMechs.Sn2Mech1'
+] %}
+
+{% block content %}
+    <div class="ui center aligned container">
+        <div id="bcrumbCont" class="ui compact raised segment" style="height:50px;">
+            <div id="bcrumb" class="ui breadcrumb">
+              <a href="{{ url_for(endpoints[0]) }}" class="section">Home</a>
+              <i class="right chevron icon divider"></i>
+              <a href="{{ url_for(endpoints[1]) }}" class="section">Undergraduate Basic Organic Chemistry</a>
+              <i class="right chevron icon divider"></i>
+              <a href="{{ url_for(endpoints[2]) }}" class="section">Sn<sub>1</sub>, Sn<sub>2</sub>, E1, and E2 Mechanisms</a>
+              <i class="right chevron icon divider"></i>
+              <a href="{{ url_for(endpoints[3]) }}" class="section">Sn<sub>2</sub></a>
+              <i class="right chevron icon divider"></i>
+              <div class="section">Problems</div>
+            </div>
+        </div>
+        <br/>
+        <br/>
+        <div class="ui stackable grid">
+            <div class="ui row">
+                <div class="column">
+                    <div style="font-size:30px" class="ui segment">Easy</div>
+                </div>
+            </div>
+            <div class="ui row">
+                <div class="column">
+                    <div style="font-size:30px" class="ui segment">Medium</div>
+                </div>
+            </div>
+            <div class="ui row">
+                <div class="column">
+                    <div style="font-size:30px" class="ui segment">Hard</div>
+                </div>
+            </div>  
+      </div>
+    </div>
+{% endblock %}

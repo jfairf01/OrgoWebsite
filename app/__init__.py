@@ -71,4 +71,7 @@ def create_app(config_name):
     from .admin import admin as admin_blueprint
     app.register_blueprint(admin_blueprint, url_prefix='/admin')
 
+    from .SnEMechs import SnEMechs as SnEMechs_blueprint
+    app.register_blueprint(SnEMechs_blueprint, url_prefix='/Sn_1+Sn_2+E1+E2+Mechanisms')
+
     return app

@@ -1,0 +1,111 @@
+{% extends 'layouts/base.html' %}
+
+{% set endpoints = [
+    'main.index',
+    'main.Categories',
+    'SnEMechs.Sn2'
+] %}
+
+{% block content %}
+    <div class="ui center aligned container">
+        <div id="bcrumbCont" class="ui compact raised segment" style="height:50px;">
+            <div id="bcrumb" class="ui breadcrumb">
+              <a href="{{ url_for(endpoints[0]) }}" class="section">Home</a>
+              <i class="right chevron icon divider"></i>
+              <a href="{{ url_for(endpoints[1]) }}" class="section">Undergraduate Basic Organic Chemistry</a>
+              <i class="right chevron icon divider"></i>
+              <div class="active section">Sn<sub>1</sub>, Sn<sub>2</sub>, E1, and E2 Mechanisms</div>
+            </div>
+        </div>
+        <br/>
+
+        <div class="ui two column stackable grid">
+            <div class="two column row">
+                <div class="column">
+                    <div style="font-size:20px" class="ui compact segment">
+                        <div class="ui text">Sn<sub>1</sub></div>
+                    </div>
+                </div>
+                <div class="column">
+                    <div style="font-size:20px" class="ui compact segment">
+                        <div class="ui text">E1</div>
+                    </div>
+                </div>
+            </div>
+            <div class="two column row">
+                <div class="column">
+                    <a href="{{ url_for(endpoints[2]) }}">
+                        <div id="button" style="font-size:20px" class="ui segment">
+                            <div class="ui text">Sn<sub>2</sub></div>
+                        </div>
+                    </a>
+                </div>
+                <div class="column">
+                    <div style="font-size:20px" class="ui segment">
+                        <div class="ui text">E2</div>
+                    </div>
+                </div>
+            </div>
+            <div class="one column row">
+                <div class="column">
+                    <div style="font-size:20px" class="ui segment">
+                        <div class="ui text">Overview + Summary Chart</div>
+                    </div>
+                </div>
+            </div>
+            <div class="one column row">
+                <div class="column">
+                    <div style="font-size:20px" class="ui segment">
+                        <div class="ui text">Problems</div>
+                    </div>
+                </div>
+            </div>
+            <br/>
+        </div>
+    </div>
+
+    <style>
+        .column {
+            /*height: 100%;*/
+            vertical-align: middle;
+            display: table;
+        }
+        .column .segment { 
+            height: 100%;
+            width: 100%;
+            vertical-align: middle;
+            text-align: center;
+            display: table;
+        }
+        .text {
+            display: table-cell;
+            vertical-align: middle;
+        }
+        .column a {
+            text-align: center;
+            vertical-align: middle;
+            width: 100%;
+        }
+        div.bcrumbCont {
+            display: table-cell;
+            vertical-align: middle;
+            text-align: center;
+        }
+
+        div.bcrumb {
+            display: inline-block;
+        }
+        .section{
+            line-height: 130%;
+        }
+    </style>
+
+    <style>
+        #button:hover{
+            /*text-decoration: none; */
+            font-weight: bold; 
+        }
+    </style>
+
+
+{% endblock %}

@@ -1,42 +1,45 @@
 {% extends 'layouts/base.html' %}
 
 {% set endpoints = [
-    'main.secondPage'
+    'main.Categories'
 ] %}
 
 {% block content %}
+    <br/>
+    <br/>
     <div class="ui center aligned container">
-        <div class="ui center aligned grid">
-            <div class="ui row"></div>
-            <div class="ui row"></div>
-            <div class="ui row"></div>
-            <div class="ui row"></div>
-            <div class="ui row"></div>
-            <div class="ui row">
-                <div class="ui ten wide column">
-                    <div style="font-size:30px" class="ui raised six wide segment"><div class="ui huge text">Undergraduate Basic Organic Chemistry</div></div>
-                </div>
-            </div>
-            <div class="ui row">
-                <div class="ui ten wide column">
-                    <div style="font-size:30px" class="ui raised center segment">Undergraduate Advanced Organic Chemistry</div>
-                </div>
-            </div>
-            <div class="ui row">
-                <div class="ui ten wide column">
-                    <div style="font-size:30px" class="ui raised center segment">Extra Problems</div>
-                </div>
-            </div>
-            <div class="ui row"></div>
-            <div class="ui row"></div>
-            <div class="ui row"></div>
-            <div class="ui row"></div>
-            <div class="ui row"></div>
-            <div class="ui row">
+        <div class="ui center aligned one column stackable grid">
+            <div class="column">
                 <a href="{{ url_for(endpoints[0]) }}">
-                    <button style="background-color:white;font-size:30px" class="ui button">Next Page<i class="chevron right icon"></i></button>
+                <div style="font-size:30px" id="button" class="ui raised segment">Undergraduate Basic Organic Chemistry</div>
                 </a>
-            </div>  
+            </div>
+            <br/>
+            <div class="column">
+                <div style="font-size:30px" class="ui raised segment">
+                    Undergraduate Advanced Organic Chemistry
+                </div>
+            </div>
+            <br/>
+            <div class="column">
+                <div style="font-size:30px" class="ui raised segment">
+                    Extra Problems
+                </div>
+            </div>
       </div>
     </div>
+
+    <style>
+    #button:hover{
+        text-decoration: none; 
+        font-weight: bold; 
+    }
+    </style>
+    <style>
+    div.ui.raised.segment{
+        line-height: 100%;
+    }
+    </style>
+
+
 {% endblock %}

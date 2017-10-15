@@ -1,0 +1,104 @@
+{% extends 'layouts/base.html' %}
+
+{% set endpoints = [
+    'main.index',
+    'main.Categories',
+    'SnEMechs.index',
+    'SnEMechs.Sn2',
+    'SnEMechs.Sn2Learning',
+    'SnEMechs.Sn2Mech2'
+] %}
+
+{% block content %}
+    <div class="ui center aligned container">
+        <div id="bcrumbCont" class="ui compact raised segment" style="height:50px;">
+            <div id="bcrumb" class="ui breadcrumb">
+              <a href="{{ url_for(endpoints[0]) }}" class="section">Home</a>
+              <i class="right chevron icon divider"></i>
+              <a href="{{ url_for(endpoints[1]) }}" class="section">Undergraduate Basic Organic Chemistry</a>
+              <i class="right chevron icon divider"></i>
+              <a href="{{ url_for(endpoints[2]) }}" class="section">Sn<sub>1</sub>, Sn<sub>2</sub>, E1, and E2 Mechanisms</a>
+              <i class="right chevron icon divider"></i>
+              <a href="{{ url_for(endpoints[3]) }}" class="section">Sn<sub>2</sub></a>
+              <i class="right chevron icon divider"></i>
+              <a href="{{ url_for(endpoints[4]) }}" class="section">Understanding Sn<sub>2</sub> Reactions</a>
+                <i class="right chevron icon divider"></i>
+              <div class="active section">Mechanisms Slide 1</div>
+            </div>
+        </div>
+        <br/>
+        <br/>
+        <img src="{{ url_for('static', filename='Sn2Formula1.png', width=100) }}">
+        <br/>
+        <br/>
+        <div class="column">
+            <div class="ui segment">
+                The SN2 mechanism is a bimolecular nucleophilic substitution reaction. Using the example above, the nitrile is the nucleophile which is attacking the methyl iodine (electrophile). From the crude scheme, the nitrile is coming in from the back displacing the iodine to give the product. Hence, this is why the SN2 reaction is known as the backside attack. Everything in this reaction happens at the same time, bonds forming and bonds breaking. Chemist call these type of reactions a concerted process, which  means the all SN2 reactions are concerted reactions. 
+                <br/>
+                <br/>
+                The reason the reaction is considered a bimolecular reaction is that two molecules are interacting with one another in the rate determining step to make the product. Since this is happening all at once, there are no intermediates in the SN2 mechanism. 
+            </div>
+        </div>
+        <br/>
+        <br/>
+        <div class="ui stackable grid">
+            <div class="ui row">
+                <div class="column">
+                    <a href="{{ url_for(endpoints[5]) }}"> 
+                    <button style="background-color:white;font-size:30px" class="ui button">Next Page<i class="chevron right icon"></i></button>
+                </a>
+                </div>
+            </div>  
+        </div>
+    </div>
+
+    <style>
+        .column {
+            /*height: 100%;*/
+            vertical-align: middle;
+            display: table;
+        }
+        .column .segment { 
+            height: 100%;
+            width: 100%;
+            vertical-align: middle;
+            text-align: left;
+            display: table;
+        }
+        .text {
+            display: table-cell;
+            vertical-align: middle;
+        }
+        .column a {
+            text-align: center;
+            vertical-align: middle;
+            width: 100%;
+        }
+        div.bcrumbCont {
+            display: table-cell;
+            vertical-align: middle;
+            text-align: center;
+        }
+
+        div.bcrumb {
+            display: inline-block;
+        }
+        .section{
+            line-height: 130%;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            width: auto\9; /* ie8 */
+        }
+    </style>
+
+    <style>
+        #button:hover{
+            /*text-decoration: none; */
+            font-weight: bold; 
+        }
+    </style>
+
+
+{% endblock %}

@@ -3,12 +3,15 @@
 <!DOCTYPE html>
 <html>
     <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="{{ url_for('static', filename='atom.ico') }}">
         {% include 'partials/_head.html' %}
         {# Any templates that extend this template can set custom_head_tags to add scripts to their page #}
         {% block custom_head_tags %}{% endblock %}
     </head>
     <body>
+      <br/>
+      <h1 class="ui center aligned header">OrganicFun</h1>
       {# Example dropdown menu setup. Uncomment lines to view
         {% set dropdown = 
           [

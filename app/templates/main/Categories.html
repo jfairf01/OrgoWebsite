@@ -1,0 +1,121 @@
+{% extends 'layouts/base.html' %}
+
+{% set endpoints = [
+    'main.index',
+    'SnEMechs.index'
+] %}
+
+{% block content %}
+    <div class="ui center aligned container">
+        <div id="bcrumbCont" class="ui compact raised segment" style="height:50px;">
+            <div id="bcrumb" class="ui breadcrumb">
+              <a href="{{ url_for(endpoints[0]) }}" class="section">Home</a>
+              <i class="right chevron icon divider"></i>
+              <div class="active section">Undergraduate Basic Organic Chemistry</div>
+            </div>
+        </div>
+        <br/>
+        <div class="ui two column stackable grid">
+            <div class="three column row">
+                <div class="column">
+                    <div style="font-size:20px" class="ui segment">
+                        <div class="ui text">General Chemistry</div>
+                    </div>
+                </div>
+                <div class="column">
+                    <div style="font-size:20px" class="ui segment">
+                        <div class="ui text">Naming</div>
+                    </div>
+                </div>
+                <div class="column">
+                    <div style="font-size:20px" class="ui segment">
+                        <div class="ui text">Conformation</div>
+                    </div>
+                </div>
+            </div>
+            <br/>
+            <div class="three column row">
+                <div class="column">
+                    <div style="font-size:20px" class="ui segment">
+                        <div class="ui text">Chirality</div>
+                    </div>
+                </div>
+                <div class="column">
+                    <div style="font-size:20px" class="ui segment">
+                        <div class="ui text">Reactions: Introduction to Basic Mechanisms (alcohols + alkyl halides)</div>
+                    </div>
+                </div>
+                <div class="column">
+                    <div style="font-size:20px" class="ui segment">
+                        <div class="ui text">Elimination Reactions and Introduction to Alkenes</div>
+                    </div>
+                </div>
+            </div>
+            <br/>
+            <div class="three column row">
+                <div class="column">
+                    <div style="font-size:20px" class="ui segment">
+                        <div class="ui text">Alkene and Alkyne Reactions</div>
+                    </div>
+                </div>
+                
+                <div class="column">
+                    <a href="{{ url_for(endpoints[1]) }}">
+                    <div id ="button" style="font-size:20px" class="ui segment">
+                        <div class="ui text">Sn<sub>1</sub>, Sn<sub>2</sub>, E1, and E2 Mechanisms</div>
+                    </div>
+                    </a>
+                </div>
+                
+                <div class="column">
+                    <div style="font-size:20px" class="ui segment">
+                        <div class="ui text">Conjugated Systems and The Diels-Alder Reaction</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        .column {
+            /*height: 100%;*/
+            vertical-align: middle;
+            display: table;
+        }
+        .column .segment { 
+            height: 100%;
+            width: 100%;
+            vertical-align: middle;
+            text-align: center;
+            display: table;
+        }
+        .text {
+            display: table-cell;
+            vertical-align: middle;
+        }
+        .column a {
+            text-align: center;
+            vertical-align: middle;
+            width: 100%;
+        }
+        div.bcrumbCont {
+            display: table-cell;
+            vertical-align: middle;
+            text-align: center;
+        }
+
+        div.bcrumb {
+            display: inline-block;
+        }
+    </style>
+
+    <style>
+        #button:hover{
+            /*text-decoration: none; */
+            font-weight: bold; 
+        }
+    </style>
+
+
+
+{% endblock %}

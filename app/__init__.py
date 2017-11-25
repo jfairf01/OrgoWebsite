@@ -2,7 +2,6 @@ import os
 from flask import Flask
 from flask_mail import Mail
 from flask_sqlalchemy import SQLAlchemy
-from flask_login import LoginManager
 from flask_assets import Environment
 from flask_wtf import CsrfProtect
 from flask_compress import Compress
@@ -18,11 +17,6 @@ db = SQLAlchemy()
 csrf = CsrfProtect()
 compress = Compress()
 
-# Set up Flask-Login
-login_manager = LoginManager()
-login_manager.session_protection = 'strong'
-login_manager.login_view = 'account.login'
-
 
 def create_app(config_name):
     app = Flask(__name__)
@@ -35,7 +29,6 @@ def create_app(config_name):
     # Set up extensions
     mail.init_app(app)
     db.init_app(app)
-    login_manager.init_app(app)
     csrf.init_app(app)
     compress.init_app(app)
     RQ(app)
@@ -64,12 +57,6 @@ def create_app(config_name):
     # Create app blueprints
     from .main import main as main_blueprint
     app.register_blueprint(main_blueprint)
-
-    from .account import account as account_blueprint
-    app.register_blueprint(account_blueprint, url_prefix='/account')
-
-    from .admin import admin as admin_blueprint
-    app.register_blueprint(admin_blueprint, url_prefix='/admin')
 
     from .SnEMechs import SnEMechs as SnEMechs_blueprint
     app.register_blueprint(SnEMechs_blueprint, url_prefix='/Sn_1+Sn_2+E1+E2+Mechanisms')

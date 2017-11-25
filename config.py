@@ -1,6 +1,5 @@
 import os
 import sys
-from raygun4py.middleware import flask as flask_raygun
 
 PYTHON_VERSION = sys.version_info[0]
 if PYTHON_VERSION == 3:
@@ -89,8 +88,6 @@ class ProductionConfig(Config):
         Config.init_app(app)
         assert os.environ.get('SECRET_KEY'), 'SECRET_KEY IS NOT SET!'
 
-        flask_raygun.Provider(app, app.config['RAYGUN_APIKEY']).attach()
-
 
 class HerokuConfig(ProductionConfig):
     @classmethod
@@ -119,7 +116,7 @@ config = {
     'development': DevelopmentConfig,
     'testing': TestingConfig,
     'production': ProductionConfig,
-    'default': DevelopmentConfig,
+    'default': ProductionConfig,
     'heroku': HerokuConfig,
     'unix': UnixConfig
 }
